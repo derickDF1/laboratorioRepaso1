@@ -99,6 +99,7 @@ namespace laboratorioRepaso1
                     }
                 }
             }
+            //Cargar los datos en el datagridview
             dataGridViewReporteSueldos.DataSource = null;
             dataGridViewReporteSueldos.DataSource = reportes;
             dataGridViewReporteSueldos.Refresh();
