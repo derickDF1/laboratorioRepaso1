@@ -136,7 +136,7 @@ namespace laboratorioRepaso1
                 sueldoAcumulado += sueldoHora * asistencia.HorasMes;
             }
 
-            textBoxEspecifico.Text = empleadoEncontrado.NoEmpleado + ". " + empleadoEncontrado.NombreEmpleado + ", Salario Acumulado: " + sueldoAcumulado;
+            textBoxEspecifico.Text = empleadoEncontrado.NoEmpleado + ". " + empleadoEncontrado.NombreEmpleado + ", Sueldo Acumulado: " + sueldoAcumulado;
         }
 
         private void comboBoxEmpleadoEspecifico_SelectionChangeCommitted(object sender, EventArgs e)

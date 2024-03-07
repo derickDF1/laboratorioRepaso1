@@ -38,9 +38,10 @@ namespace laboratorioRepaso1
             this.label3 = new System.Windows.Forms.Label();
             this.buttonCalcularSueldos = new System.Windows.Forms.Button();
             this.comboBoxEmpleadoEspecifico = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelBuscarEmpleado = new System.Windows.Forms.Label();
             this.buttonBuscarEmpleado = new System.Windows.Forms.Button();
             this.textBoxEspecifico = new System.Windows.Forms.TextBox();
+            this.labelEmpleadoEspecifico = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReporteSueldos)).BeginInit();
@@ -129,14 +130,14 @@ namespace laboratorioRepaso1
             this.comboBoxEmpleadoEspecifico.SelectedIndexChanged += new System.EventHandler(this.comboBoxEmpleadoEspecifico_SelectedIndexChanged);
             this.comboBoxEmpleadoEspecifico.SelectionChangeCommitted += new System.EventHandler(this.comboBoxEmpleadoEspecifico_SelectionChangeCommitted);
             // 
-            // label4
+            // labelBuscarEmpleado
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(411, 320);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Ver empleado en especifico";
+            this.labelBuscarEmpleado.AutoSize = true;
+            this.labelBuscarEmpleado.Location = new System.Drawing.Point(408, 334);
+            this.labelBuscarEmpleado.Name = "labelBuscarEmpleado";
+            this.labelBuscarEmpleado.Size = new System.Drawing.Size(138, 13);
+            this.labelBuscarEmpleado.TabIndex = 10;
+            this.labelBuscarEmpleado.Text = "Ver empleado en especifico";
             // 
             // buttonBuscarEmpleado
             // 
@@ -155,14 +156,24 @@ namespace laboratorioRepaso1
             this.textBoxEspecifico.Size = new System.Drawing.Size(347, 20);
             this.textBoxEspecifico.TabIndex = 12;
             // 
+            // labelEmpleadoEspecifico
+            // 
+            this.labelEmpleadoEspecifico.AutoSize = true;
+            this.labelEmpleadoEspecifico.Location = new System.Drawing.Point(750, 334);
+            this.labelEmpleadoEspecifico.Name = "labelEmpleadoEspecifico";
+            this.labelEmpleadoEspecifico.Size = new System.Drawing.Size(155, 13);
+            this.labelEmpleadoEspecifico.TabIndex = 13;
+            this.labelEmpleadoEspecifico.Text = "Datos del empleado especifico:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 450);
+            this.Controls.Add(this.labelEmpleadoEspecifico);
             this.Controls.Add(this.textBoxEspecifico);
             this.Controls.Add(this.buttonBuscarEmpleado);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelBuscarEmpleado);
             this.Controls.Add(this.comboBoxEmpleadoEspecifico);
             this.Controls.Add(this.buttonCalcularSueldos);
             this.Controls.Add(this.label3);
@@ -194,9 +205,10 @@ namespace laboratorioRepaso1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonCalcularSueldos;
         private System.Windows.Forms.ComboBox comboBoxEmpleadoEspecifico;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelBuscarEmpleado;
         private System.Windows.Forms.Button buttonBuscarEmpleado;
         private System.Windows.Forms.TextBox textBoxEspecifico;
+        private System.Windows.Forms.Label labelEmpleadoEspecifico;
     }
 }
 
