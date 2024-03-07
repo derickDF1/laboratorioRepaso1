@@ -16,9 +16,11 @@ namespace laboratorioRepaso1
         List<Empleado> empleados = new List<Empleado>();    //Cargar empleados
         List<AsistenciaEmpleado> asistencias = new List<AsistenciaEmpleado>();    //Cargar asistencias
         List<Reporte> reportes = new List<Reporte>(); //Cargar reportes de sueldo acumulado de los empleados
+        
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         public void MostrarEmpleados()
@@ -54,7 +56,7 @@ namespace laboratorioRepaso1
                 asistencias.Add(asistencia);    //Guardar el empleado a la lista de asistencias
             }
             reader.Close();
-            MostrarAsistencias();       //Mostrar la lista de asistencias en el GridView
+            
         }
 
         public void cargarEmpleados()
@@ -74,13 +76,15 @@ namespace laboratorioRepaso1
                 empleados.Add(empleado);    //Guardar el empleado a la lista de empleados
             }
             reader.Close();
-            MostrarEmpleados();     //Mostrar la lista de empleados en el GridView
+            
         }
 
         private void buttonLeer_Click(object sender, EventArgs e)
         {
-            cargarEmpleados();      //Leer archivo Empleados.txt y mostrarlo en el GridView
-            cargarAsistencia();     //Leer archivo AsistenciaEmpleados.txt y mostrarlo en el GridView
+            //cargarEmpleados();      //Leer archivo Empleados.txt y mostrarlo en el GridView
+            MostrarEmpleados();     //Mostrar la lista de empleados en el GridView
+            //cargarAsistencia();     //Leer archivo AsistenciaEmpleados.txt y mostrarlo en el GridView
+            MostrarAsistencias();       //Mostrar la lista de asistencias en el GridView
         }
 
         private void buttonCalcularSueldos_Click(object sender, EventArgs e)
@@ -103,6 +107,42 @@ namespace laboratorioRepaso1
             dataGridViewReporteSueldos.DataSource = null;
             dataGridViewReporteSueldos.DataSource = reportes;
             dataGridViewReporteSueldos.Refresh();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cargarEmpleados();
+            cargarAsistencia();
+            comboBoxEmpleadoEspecifico.DisplayMember = "nombreEmpleado";
+            comboBoxEmpleadoEspecifico.DataSource = empleados;
+        }
+
+        private void comboBoxEmpleadoEspecifico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonBuscarEmpleado_Click(object sender, EventArgs e)
+        {
+            comboBoxEmpleadoEspecifico.ValueMember = "noEmpleado";
+            int noEmpleado = Convert.ToInt32(comboBoxEmpleadoEspecifico.SelectedValue);
+
+            Empleado empleadoEncontrado = empleados.Find(c => c.NoEmpleado == noEmpleado);
+
+            decimal sueldoHora = empleadoEncontrado.SueldoHora, sueldoAcumulado = 0;
+            // Sumar los sueldos calculados para cada mes
+            foreach (AsistenciaEmpleado asistencia in asistencias.Where(a => a.NoEmpleado == noEmpleado))
+            {
+                sueldoAcumulado += sueldoHora * asistencia.HorasMes;
+            }
+
+            textBoxEspecifico.Text = empleadoEncontrado.NoEmpleado + ". " + empleadoEncontrado.NombreEmpleado + ", Salario Acumulado: " + sueldoAcumulado;
+        }
+
+        private void comboBoxEmpleadoEspecifico_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }

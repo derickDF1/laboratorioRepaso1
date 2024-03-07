@@ -37,6 +37,10 @@ namespace laboratorioRepaso1
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonCalcularSueldos = new System.Windows.Forms.Button();
+            this.comboBoxEmpleadoEspecifico = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.buttonBuscarEmpleado = new System.Windows.Forms.Button();
+            this.textBoxEspecifico = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReporteSueldos)).BeginInit();
@@ -61,7 +65,7 @@ namespace laboratorioRepaso1
             // buttonLeer
             // 
             this.buttonLeer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLeer.Location = new System.Drawing.Point(356, 302);
+            this.buttonLeer.Location = new System.Drawing.Point(32, 340);
             this.buttonLeer.Name = "buttonLeer";
             this.buttonLeer.Size = new System.Drawing.Size(162, 37);
             this.buttonLeer.TabIndex = 2;
@@ -107,7 +111,7 @@ namespace laboratorioRepaso1
             // buttonCalcularSueldos
             // 
             this.buttonCalcularSueldos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCalcularSueldos.Location = new System.Drawing.Point(602, 302);
+            this.buttonCalcularSueldos.Location = new System.Drawing.Point(216, 340);
             this.buttonCalcularSueldos.Name = "buttonCalcularSueldos";
             this.buttonCalcularSueldos.Size = new System.Drawing.Size(162, 37);
             this.buttonCalcularSueldos.TabIndex = 7;
@@ -115,11 +119,51 @@ namespace laboratorioRepaso1
             this.buttonCalcularSueldos.UseVisualStyleBackColor = true;
             this.buttonCalcularSueldos.Click += new System.EventHandler(this.buttonCalcularSueldos_Click);
             // 
+            // comboBoxEmpleadoEspecifico
+            // 
+            this.comboBoxEmpleadoEspecifico.FormattingEnabled = true;
+            this.comboBoxEmpleadoEspecifico.Location = new System.Drawing.Point(411, 355);
+            this.comboBoxEmpleadoEspecifico.Name = "comboBoxEmpleadoEspecifico";
+            this.comboBoxEmpleadoEspecifico.Size = new System.Drawing.Size(250, 21);
+            this.comboBoxEmpleadoEspecifico.TabIndex = 9;
+            this.comboBoxEmpleadoEspecifico.SelectedIndexChanged += new System.EventHandler(this.comboBoxEmpleadoEspecifico_SelectedIndexChanged);
+            this.comboBoxEmpleadoEspecifico.SelectionChangeCommitted += new System.EventHandler(this.comboBoxEmpleadoEspecifico_SelectionChangeCommitted);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(411, 320);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Ver empleado en especifico";
+            // 
+            // buttonBuscarEmpleado
+            // 
+            this.buttonBuscarEmpleado.Location = new System.Drawing.Point(408, 392);
+            this.buttonBuscarEmpleado.Name = "buttonBuscarEmpleado";
+            this.buttonBuscarEmpleado.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscarEmpleado.TabIndex = 11;
+            this.buttonBuscarEmpleado.Text = "Buscar";
+            this.buttonBuscarEmpleado.UseVisualStyleBackColor = true;
+            this.buttonBuscarEmpleado.Click += new System.EventHandler(this.buttonBuscarEmpleado_Click);
+            // 
+            // textBoxEspecifico
+            // 
+            this.textBoxEspecifico.Location = new System.Drawing.Point(750, 356);
+            this.textBoxEspecifico.Name = "textBoxEspecifico";
+            this.textBoxEspecifico.Size = new System.Drawing.Size(347, 20);
+            this.textBoxEspecifico.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 450);
+            this.Controls.Add(this.textBoxEspecifico);
+            this.Controls.Add(this.buttonBuscarEmpleado);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.comboBoxEmpleadoEspecifico);
             this.Controls.Add(this.buttonCalcularSueldos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -130,6 +174,7 @@ namespace laboratorioRepaso1
             this.Controls.Add(this.dataGridViewEmpleado);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReporteSueldos)).EndInit();
@@ -148,6 +193,10 @@ namespace laboratorioRepaso1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonCalcularSueldos;
+        private System.Windows.Forms.ComboBox comboBoxEmpleadoEspecifico;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonBuscarEmpleado;
+        private System.Windows.Forms.TextBox textBoxEspecifico;
     }
 }
 
